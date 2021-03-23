@@ -24,7 +24,7 @@ const Footer = () => {
 
   return (
     <React.Fragment>
-      <div className="sub-link">
+      {/* <div className="sub-link">
         <ul>
           <Link to='/greeting'><li>인사말</li></Link>
           <Link to='/foundation'><li>설립취지</li></Link>
@@ -43,7 +43,7 @@ const Footer = () => {
                 Copyright © 2020 Design All Rights Reserved by 사단법인 한국외국어대학교 산학멘토링회
                 <a href='http://www.hufs.or.kr/'><img src={"alumniLogo"} alt="alumni-logo" className="alumni-logo-btn" /></a>
         <img src={'sa'} alt="logo" className="logo-btn" />
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };

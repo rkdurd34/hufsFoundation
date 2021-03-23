@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <React.Fragment>
-      <div className="header">
+      {/* <div className="header">
         <Link to="/" className="logo"><img src={'a'} alt="logo" width='30%'></img></Link>
         <ul className="menu">
           <li className="menu1"><Link to="/programs">진행중인 프로그램</Link>
@@ -45,7 +45,7 @@ const Header = () => {
             </ul>
           </li>
         </ul>
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };
