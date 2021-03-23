@@ -1,12 +1,13 @@
+require('dotenv').config();
 const morgan = require('morgan');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
-const passport = require('passport');
-const passportConfig = require('./passport/index');
-const multer = require('multer')
+// const passport = require('passport');
+// const passportConfig = require('./passport/index');
+const multer = require('multer');
 const app = express();
 
 
@@ -14,13 +15,17 @@ app.use(cors({ credentials: true, origin: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(express.static("uploads"));
 app.use(morgan('dev'));
-app.use((req,res,next)=> res.upload = multer({dest:'uploads'}))
-app.use(passport.initialize());
-passportConfig();
+
+const upload = multer({ dest: './uploads/' });
+// app.post("/board/upload", (req, res, next) => { req["upload"] = upload; upload.single('img'); next(); });
+app.post("/board/upload", upload.single('img'));
+// app.use(passport.initialize());
+// passportConfig();
 
 
-app.use('/test', require('./routes/test'));
+// app.use('/test', require('./routes/test'));
 
 app.use('/board', require('./routes/board.routes'));
 
@@ -34,5 +39,5 @@ app.use((err, req, res, next) => {
   res.send({ err });
 });
 
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => console.log(`Server on port ${PORT}`));
+const PORT = process.env.APP_PORT || 5000;
+app.listen(PORT, () => console.log(`Server on port ${PORT}`));
