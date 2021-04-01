@@ -1,26 +1,36 @@
 import React, { useContext } from 'react';
-// import '../css/footer.css';
-import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import logo1 from '../images/logo1.png';
+
+const Container = styled.div`
+width:100%;
+height:8vw;
+background-color:#F1F1F1;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-top: 0.5px solid #DCDCDC;
+div{
+  width:50%;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+span{
+  font-size: 0.9vw;
+  color:#808080;
+}
+
+img{
+  width:30%;
+  }
+
+
+`;
 
 
 const Footer = () => {
-  // const url = URL;
-  // const base = url + '/api/user/login'
 
-  // const instance = axios.create({
-  //     withCredentials: true
-  //   })
-
-
-  // const logout = () => {
-  //     const out = async () => {
-  //         await instance.get(base)
-  //         .catch( (err) => {
-  //             if (err.response.status === 404) { alert('로그인 상태가 아닙니다.') }
-  //         })
-  //     }
-  //     out();
-  // }
 
   return (
     <React.Fragment>
@@ -37,13 +47,20 @@ const Footer = () => {
           <Link to='/login'><li>관리자 로그인</li></Link>
           <Link to='/'><li >로그아웃</li></Link>
         </ul>
-      </div>
-      <div className="footer">
-        주소 : 서울특별시 동대문구 이문로 107 외대본관 1101호<br />
-                Copyright © 2020 Design All Rights Reserved by 사단법인 한국외국어대학교 산학멘토링회
-                <a href='http://www.hufs.or.kr/'><img src={"alumniLogo"} alt="alumni-logo" className="alumni-logo-btn" /></a>
-        <img src={'sa'} alt="logo" className="logo-btn" />
       </div> */}
+      <Container>
+        <div >
+          <span>
+            주소 : 서울특별시 동대문구 이문로 107 외대본관 1101호<br />
+            Copyright © 2020 Design All Rights Reserved by 사단법인 한국외국어대학교 산학멘토링회
+        </span>
+        </div>
+
+        {/* <a href='http://www.hufs.or.kr/'><img src={"alumniLogo"} alt="alumni-logo" className="alumni-logo-btn" /></a> */}
+        <div >
+          <img src={logo1} alt="logo" />
+        </div>
+      </Container>
     </React.Fragment>
   );
 };

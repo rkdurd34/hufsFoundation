@@ -7,57 +7,22 @@ import Title from "./components/Title";
 import Header from "./components/Header";
 import Footer from './components/Footer';
 
-const BASE_URL = "http://localhost:5000";
-axios.defaults.baseURL = "http://localhost:5000";
+import Home from './container/Home';
+
+import CreatePost from "./components/Summernote";
+import ImageUpload from './components/ImageUpload';
+
 function App() {
-  const [content, setContent] = useState("");
-  const [uploadedImg, setUploadedImg] = useState({
-    fileName: "",
-    fillPath: ""
-  });
-  const onChange = e => {
-    console.log(e.target.files[0]);
-    setContent(e.target.files[0]);
-  };
-  const onSubmit = e => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("img", content);
-    console.log('맞음...?');
-    axios
-      .post(`/board/upload`, formData)
-      .then(res => {
-        const { fileName } = res.data;
-        console.log(fileName);
-        setUploadedImg({ fileName, filePath: `${BASE_URL}/${fileName}` });
-        // alert("The file is successfully uploaded");
-      })
-      .catch(err => {
-        console.error(err);
-      });
-  };
+
   return (
     <BrowserRouter>
       <Header />
-      <Title />
-      <main>
-        <div>
-          <>
-            <form onSubmit={onSubmit} encType="multipart/form-data">
-              {uploadedImg ? (
-                <>
-                  <img style={{ width: "100px" }} src={uploadedImg.filePath} alt="" />
-                  <h3>{uploadedImg.fileName}</h3>
-                </>
-              ) : (
-                ""
-              )}
-              <input type="file" name='img' onChange={onChange} />
-              <button type="submit" >Upload</button>
-            </form>
-          </>
-        </div>
-        {/* <Route path="/map" component={MapScreen} />
+
+
+      <Route path="/create/:id" component={CreatePost} />
+      <Route path="/image/upload" exact component={ImageUpload} />
+      <Route path='/' exact component={Home} />
+      {/* <Route path="/map" component={MapScreen} />
         <Route path="/business" component={BusinessScreen} />
         <Route path="/group" component={GroupScreen} />
         <Route path="/funding" component={FundingScreen} />
@@ -91,7 +56,7 @@ function App() {
 
         <Route path="/under" exact={true} component={UnderConstruction} />
         <Route path="/" exact={true} component={HomeScreen} /> */}
-      </main>
+
       <Footer />
     </BrowserRouter>
   );

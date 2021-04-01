@@ -15,12 +15,11 @@ app.use(cors({ credentials: true, origin: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(express.static("uploads"));
+app.use(express.static("media"));
 app.use(morgan('dev'));
 
-const upload = multer({ dest: './uploads/' });
-// app.post("/board/upload", (req, res, next) => { req["upload"] = upload; upload.single('img'); next(); });
-app.post("/board/upload", upload.single('img'));
+const upload = multer({ dest: 'media/img' });
+app.post("/board/upload", upload.array('docs'));
 // app.use(passport.initialize());
 // passportConfig();
 

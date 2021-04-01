@@ -1,11 +1,58 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import '../css/header.css';
-// import Logo from '../images/logoTop.png';
+import styled from 'styled-components';
+import logo1 from '../images/logo1.png';
+
+const Container = styled.div`
+width: 100%;
+height:7vw;
+
+display:flex;
+
+.first{
+  width:50%;
+  height:100%;
+  img{
+    width:40%;
+  }
+  
+}
+.second{
+  width:50%;
+  height:100%;
+  font-size: 1vw;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  align-content:center;
+  ul{
+    display:flex
+  }
+  ul li{
+    padding:5%5%;
+    list-style:none
+  }
+}
+`;
 
 const Header = () => {
   return (
     <React.Fragment>
+      <Container>
+        <div className="first">
+
+          <img src={logo1} alt="logo" />
+
+        </div>
+        <div className="second">
+          <ul>
+            <li><Link to="/intro">장학회소개</Link></li>
+            <li><Link to="/intro">장학금지급</Link></li>
+            <li><Link to="/intro">정보공개</Link></li>
+            <li><Link to="/intro">감독기관</Link></li>
+          </ul>
+        </div>
+      </Container>
       {/* <div className="header">
         <Link to="/" className="logo"><img src={'a'} alt="logo" width='30%'></img></Link>
         <ul className="menu">
