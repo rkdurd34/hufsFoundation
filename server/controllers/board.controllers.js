@@ -28,5 +28,37 @@ module.exports = {
     } catch (err) {
       next(err);
     }
+  },
+  boardList: async (req, res, next) => {
+    try {
+      const board_no = req.query.board_no;
+
+      const [result] = await db.query(`
+        SELECT *
+        FROM forum_post 
+        WHERE 
+        enabled = 1
+        
+      `);
+      res.status(200).json(result);
+    } catch (e) {
+      next(e);
+    }
+  },
+  getBoard: async (req, res, next) => {
+    try {
+      const post_no = req.query.post_no;
+
+      const [result] = await db.query(`
+      SELECT * 
+      FROM forum_post
+      WHERE 
+      no = ?
+      `, [post_no]);
+      res.status(200).json(result[0]);
+    } catch (e) {
+      next(e);
+    }
   }
+
 };

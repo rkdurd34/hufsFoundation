@@ -20,11 +20,6 @@ app.use(morgan('dev'));
 
 const upload = multer({ dest: 'media/img' });
 app.post("/board/upload", upload.array('docs'));
-// app.use(passport.initialize());
-// passportConfig();
-
-
-// app.use('/test', require('./routes/test'));
 
 app.use('/board', require('./routes/board.routes'));
 

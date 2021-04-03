@@ -22,9 +22,10 @@ span{
 }
 
 img{
-  width:30%;
+  width:35%;
+  margin-left: 10vw;
   }
-
+z-index: 999;
 
 `;
 

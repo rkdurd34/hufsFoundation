@@ -1,4 +1,11 @@
+@font-face {
+  font-family: "hufs";
+  src: local("hufs"), url(./fonts/한국외대체M.otf) format("opentype");
+}
+
 html {
+  margin: 0;
+  padding: 0;
   height: 100%;
   width: 100%;
   color: #2c2d2d;
@@ -32,5 +39,6 @@ html a:link {
   text-decoration: none;
 }
 main {
-  min-height: 77%;
+  min-height: 50vw;
+  background-color: #f5f5f5;
 }

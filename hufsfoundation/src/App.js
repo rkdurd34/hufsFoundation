@@ -7,10 +7,13 @@ import Title from "./components/Title";
 import Header from "./components/Header";
 import Footer from './components/Footer';
 
+import IntroScreen from './container/IntroScreen';
 import Home from './container/Home';
+import Board from './container/Board';
 
 import CreatePost from "./components/Summernote";
 import ImageUpload from './components/ImageUpload';
+import Post from './container/Post';
 
 function App() {
 
@@ -18,11 +21,14 @@ function App() {
     <BrowserRouter>
       <Header />
 
-
-      <Route path="/create/:id" component={CreatePost} />
-      <Route path="/image/upload" exact component={ImageUpload} />
-      <Route path='/' exact component={Home} />
-      {/* <Route path="/map" component={MapScreen} />
+      <main>
+        <Route path="/create/:id" component={CreatePost} />
+        <Route path="/image/upload" exact component={ImageUpload} />
+        <Route path='/' exact component={Home} />
+        <Route path='/intro' exact component={IntroScreen} />
+        <Route path='/board' exact component={Board} />
+        <Route path="/board/:id" exact component={Post} />
+        {/* <Route path="/map" component={MapScreen} />
         <Route path="/business" component={BusinessScreen} />
         <Route path="/group" component={GroupScreen} />
         <Route path="/funding" component={FundingScreen} />
@@ -56,7 +62,7 @@ function App() {
 
         <Route path="/under" exact={true} component={UnderConstruction} />
         <Route path="/" exact={true} component={HomeScreen} /> */}
-
+      </main>
       <Footer />
     </BrowserRouter>
   );

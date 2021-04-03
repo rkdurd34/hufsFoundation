@@ -6,14 +6,17 @@ import logo1 from '../images/logo1.png';
 const Container = styled.div`
 width: 100%;
 height:7vw;
-
+background-color:#f7f7f7;
 display:flex;
 
 .first{
   width:50%;
   height:100%;
+  display:flex;
+  align-items:center;
   img{
     width:40%;
+    margin-left:10%;
   }
   
 }
@@ -26,11 +29,22 @@ display:flex;
   align-items:center;
   align-content:center;
   ul{
-    display:flex
+    display:flex;
+    align-items:center;
+    margin-left:4vw;
+    width: 100%;
+    margin-bottom:0px;
+
   }
   ul li{
-    padding:5%5%;
+    font-weight:bold;
+    font-size:1.3vw;
+    letter-spacing:0.05vw;
+    padding:0 3% 0 3%;
     list-style:none
+  }
+  ul li a:hover{
+    color:#549daa;
   }
 }
 `;
@@ -41,14 +55,14 @@ const Header = () => {
       <Container>
         <div className="first">
 
-          <img src={logo1} alt="logo" />
+          <Link to="/"><img src={logo1} alt="logo" /></Link>
 
         </div>
         <div className="second">
           <ul>
             <li><Link to="/intro">장학회소개</Link></li>
             <li><Link to="/intro">장학금지급</Link></li>
-            <li><Link to="/intro">정보공개</Link></li>
+            <li><Link to="/board">정보공개</Link></li>
             <li><Link to="/intro">감독기관</Link></li>
           </ul>
         </div>
