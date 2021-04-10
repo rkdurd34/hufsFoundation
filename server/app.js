@@ -5,8 +5,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
-// const passport = require('passport');
-// const passportConfig = require('./passport/index');
 const multer = require('multer');
 const app = express();
 
@@ -17,8 +15,16 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static("media"));
 app.use(morgan('dev'));
+const storage = multer.diskStorage({
+  destination(req, file, cb) {
+    cb(null, 'media/img');
+  },
+  filename(req, file, cb) {
+    cb(null, `${file.originalname}`);
+  }
+});
+const upload = multer({ storage });
 
-const upload = multer({ dest: 'media/img' });
 app.post("/board/upload", upload.array('docs'));
 
 app.use('/board', require('./routes/board.routes'));

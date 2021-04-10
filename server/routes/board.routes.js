@@ -5,6 +5,8 @@ const board = require('../controllers/board.controllers');
 router.post('/upload', board.uploadBoard);
 router.get('/board', board.boardList);
 router.get('/post', board.getBoard);
+router.get('/post/file', board.fileList);
+router.get('/post/file/download', board.fileDownload);
 // router.post('/programblock', chatbot.programBlock);
 // router.post('/datablock', chatbot.dataBlock);
 // router.post('/confirmblock', chatbot.confirmBlock);
