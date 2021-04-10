@@ -58,31 +58,31 @@ export default function PostDetail({ params }) {
     const fetchData = async () => {
       // 현재 게시물의 데이터만 가져오기
       const { data } = await axios.get(base + `?post_no=${postId}`);
-      console.log(data);
       setPost(data);
     };
     fetchData();
     return;
   }, [postId]);
 
-  // useEffect(() => {
-  //   const fetchFile = async () => {
-  //     const { data } = await axios.get(docRoot);
-  //     let tmpArr = [];
-  //     // let tmpArr2 = [];
+  useEffect(() => {
+    const fetchFile = async () => {
+      const { data } = await axios.get(base + `/file?post_no=${postId}`);
 
-  //     const filteredFiles = data.filter(f => f.post == postId);
-  //     filteredFiles.map(f => {
-  //       // tmpArr.push(f.name);
-  //       // tmpArr2.push(f.post_file);
-  //       tmpArr.push(f);
-  //     });
-  //     // setFileNames(tmpArr);
-  //     // setFileURL(tmpArr2);
-  //     setFile(tmpArr);
-  //   };
-  //   fetchFile();
-  // }, []);
+      let tmpArr = [];
+      // let tmpArr2 = [];
+
+      const filteredFiles = data.filter(f => f.post_no == postId);
+      filteredFiles.map(f => {
+        // tmpArr.push(f.name);
+        // tmpArr2.push(f.post_file);
+        tmpArr.push(f);
+      });
+      // setFileNames(tmpArr);
+      // setFileURL(tmpArr2);
+      setFile(tmpArr);
+    };
+    fetchFile();
+  }, []);
 
   const deletePost = () => {
     const deleteData = async () => {
@@ -91,9 +91,28 @@ export default function PostDetail({ params }) {
     deleteData();
   };
 
-  const createDownload = (link) => {
-    const linkArr = link.split(url + '/');
-    return linkArr[1];
+  const createDownload = async (no, originalName) => {
+    await axios({
+      url: `board/post/file/download?post_no=${no}`,
+      method: "GET",
+      responseType: "blob",
+    }).then(res => {
+      const url = window.URL.createObjectURL(
+        new Blob([res.data], { type: res.headers["content-type"] },)
+      );
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", originalName);
+      document.body.appendChild(link);
+      link.click();
+      window.URL.revokeObjectURL(url);
+    });
+    // .get(`board/post/file/download?post_no=${no}`);
+
+
+    // console.log(result);
+    // const linkArr = link.split(url + '/');
+    // return linkArr[1];
   };
 
   return (
@@ -108,26 +127,31 @@ export default function PostDetail({ params }) {
           {post.published &&
             <li>작성자: 관리자 / 작성일자: {post.published.slice(0, 10)} / 조회: {post.n_hit}</li>
           }
-          <li>
-            {/* <div style={{ marginLeft: '53vw', marginBottom: '2vw' }}>
-              첨부파일:
-                            {file.map(f => {
-              return (<div><Link to={'/' + createDownload(f.post_file)} target="_blank" download>{f.name}</Link></div>);
-            })}
-            </div> */}
+          <li style={{ padding: 0 }}>
+            <div style={{ paddingTop: "1vw", paddingBottom: "1vw", marginBottom: '2vw', borderBottom: "0.5px solid #DCDCDC" }}>
+              <span style={{ paddingLeft: "2vw" }}>첨부파일 :   </span>{file.map(f => {
+                return (<span style={{ textDecoration: "underline", cursor: "pointer" }} onClick={() => createDownload(f.post_no, f.name)}>
+                  {/* <Link> */}
+                  {f.name}
+                  {/* </Link> */}
+                </span>);
+              })}
+            </div>
             {/* 표는 안나옴 */}
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            {/* <div dangerouslySetInnerHTML={{ __html: post.content }} /> */}
             {/* <div><Link to ={"/" + downloadLink} target="_blank" download>파일 다운로드</Link></div> */}
           </li>
         </ul>
       </div>
       <Link to={'/' + boardName} className="notice-btn detailBtn" ><span className="btnValue">목록</span></Link>
-      { is_super ?
-        <>
-          {/* <Link to={'/update/' + postId + '/' + board} className="notice-btn detailBtn" ><span className="btnValue">수정</span></Link> */}
-          <Link to={'/' + boardName} className="notice-btn detailBtn" onClick={deletePost}><span className="btnValue">삭제</span></Link>
-        </>
-        : ''}
-    </React.Fragment>
+      {
+        is_super ?
+          <>
+            {/* <Link to={'/update/' + postId + '/' + board} className="notice-btn detailBtn" ><span className="btnValue">수정</span></Link> */}
+            <Link to={'/' + boardName} className="notice-btn detailBtn" onClick={deletePost}><span className="btnValue">삭제</span></Link>
+          </>
+          : ''
+      }
+    </React.Fragment >
   );
 }

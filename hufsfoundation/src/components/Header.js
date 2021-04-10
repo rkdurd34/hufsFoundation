@@ -1,12 +1,14 @@
+
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import logo1 from '../images/logo1.png';
+import logo1 from '../images/logo2.jpg';
 
 const Container = styled.div`
 width: 100%;
-height:7vw;
-background-color:#f7f7f7;
+height:8vw;
+background-color:white;
 display:flex;
 
 .first{
@@ -18,7 +20,7 @@ display:flex;
     width:40%;
     margin-left:10%;
   }
-  
+
 }
 .second{
   width:50%;
@@ -63,7 +65,7 @@ const Header = () => {
             <li><Link to="/intro">장학회소개</Link></li>
             <li><Link to="/intro">장학금지급</Link></li>
             <li><Link to="/board">정보공개</Link></li>
-            <li><Link to="/intro">감독기관</Link></li>
+            <li><Link to="/office">감독기관</Link></li>
           </ul>
         </div>
       </Container>

@@ -22,18 +22,17 @@ const Forum = (props) => {
       const { data } = await axios.get(base);
       // 현재 게시판의 게시물만 가져오기 (자료실, "공지사항", 행사안내, 멘토링 회보, 경영공시)
       setPosts(
-        data.filter((post) => post.board_id === 1 && post.is_notice === 0)
+        data.filter((post) => post.board_no === 1 && post.is_notice === 0)
       );
       setNotice(
-        data.filter((notice) => notice.board_id === 1 && notice.is_notice === 1)
+        data.filter((notice) => notice.board_no === 1 && notice.is_notice === 1)
       );
 
       setLoading(false);
     };
     fetchPosts();
   }, []);
-  console.log(notices);
-  console.log(posts);
+
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;

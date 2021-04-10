@@ -10,8 +10,8 @@ import Footer from './components/Footer';
 import IntroScreen from './container/IntroScreen';
 import Home from './container/Home';
 import Board from './container/Board';
-
-import CreatePost from "./components/Summernote";
+import Office from './container/Office';
+import CreatePost from "./container/CreatePost";
 import ImageUpload from './components/ImageUpload';
 import Post from './container/Post';
 
@@ -22,12 +22,13 @@ function App() {
       <Header />
 
       <main>
-        <Route path="/create/:id" component={CreatePost} />
+        <Route path="/post/create" exact component={CreatePost} />
         <Route path="/image/upload" exact component={ImageUpload} />
         <Route path='/' exact component={Home} />
         <Route path='/intro' exact component={IntroScreen} />
         <Route path='/board' exact component={Board} />
         <Route path="/board/:id" exact component={Post} />
+        <Route path="/office" exact component={Office} />
         {/* <Route path="/map" component={MapScreen} />
         <Route path="/business" component={BusinessScreen} />
         <Route path="/group" component={GroupScreen} />

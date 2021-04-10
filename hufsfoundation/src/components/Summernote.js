@@ -13,8 +13,9 @@ import "bootstrap/js/tooltip";
 import "bootstrap/dist/css/bootstrap.css";
 import { URL } from "../Util.js";
 
-function Summernote(props) {
-  const boardId = props.match.params.id;
+function Summernote({ props }) {
+  console.log(props);
+  const boardId = 1;
   let boardName = '';
   const [content, setContent] = useState('');
   const [docs, setDocs] = useState([]);
@@ -89,21 +90,25 @@ function Summernote(props) {
         공지글 여부: <input type="checkbox" id="cbox" />
       </span>
       <br />
-      <br />
-      파일 첨부: <input type="file" multiple onChange={fileChangedHandler} /><br />
 
-      <input
-        type="button"
-        className="notice-btn done"
-        value="완료"
-        onClick={createPost}
-      />
-      <input
-        type="button"
-        className="notice-btn done"
-        value="취소"
-        onClick={() => (window.location.href = "/" + boardName)}
-      />
+      <div className="fileDiv">
+        <span>파일첨부  :</span>
+        <input className="file_upload" type="file" multiple onChange={fileChangedHandler} />
+      </div>
+      <div className="bottom_btn">
+        <input
+          type="button"
+          className="notice_btn done"
+          value="완료"
+          onClick={createPost}
+        />
+        <input
+          type="button"
+          className="notice_btn done"
+          value="취소"
+          onClick={() => (window.location.href = "/board" + boardName)}
+        />
+      </div>
     </div>
   );
 }

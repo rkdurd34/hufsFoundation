@@ -53,7 +53,7 @@ const Footer = () => {
         <div >
           <span>
             주소 : 서울특별시 동대문구 이문로 107 외대본관 1101호<br />
-            Copyright © 2020 Design All Rights Reserved by 사단법인 한국외국어대학교 산학멘토링회
+            Copyright © 2020 Design All Rights Reserved by 재단법인 한국외대 동문장학회
         </span>
         </div>
 

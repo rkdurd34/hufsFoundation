@@ -23,3 +23,5 @@ const Posts = ({ posts, loading, totalPosts, currentPage, postsPerPage }) => {
 };
 
 export default Posts;
+
+

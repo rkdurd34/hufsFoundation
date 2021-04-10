@@ -1,11 +1,10 @@
 .post-container {
   width: 70%;
   margin: auto;
-  margin-top: 3vw;
 }
 
 #post-title {
-  width: 45%;
+  width: 100%;
   height: 3vw;
   margin-bottom: 2vw;
   border: 0.01vw solid #dddcdc;
@@ -24,6 +23,29 @@
 
 .done {
   border: none;
-  margin-right: 1vw;
-  margin-top: 0vw;
+}
+.file_upload {
+  display: inline;
+  margin: 0;
+  padding-left: 1vw;
+}
+.fileDiv {
+  display: flex;
+}
+.bottom_btn {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.notice_btn {
+  padding: 0.6vw;
+  background-color: #549daa;
+  color: white;
+  font-weight: bold;
+  font-size: 1vw;
+  width: 4vw;
+  margin-left: 0.3vw;
+  margin-bottom: 3vw;
+  height: 3vw;
 }
