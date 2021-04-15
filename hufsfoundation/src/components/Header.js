@@ -63,7 +63,7 @@ const Header = () => {
         <div className="second">
           <ul>
             <li><Link to="/intro">장학회소개</Link></li>
-            <li><Link to="/intro">장학금지급</Link></li>
+            <li><Link to="/scholarship">장학금지급</Link></li>
             <li><Link to="/board">정보공개</Link></li>
             <li><Link to="/office">감독기관</Link></li>
           </ul>

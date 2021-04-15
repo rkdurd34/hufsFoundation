@@ -7,11 +7,13 @@ import Title from "./components/Title";
 import Header from "./components/Header";
 import Footer from './components/Footer';
 
-import IntroScreen from './container/IntroScreen';
+import Intro from './container/Intro';
 import Home from './container/Home';
 import Board from './container/Board';
 import Office from './container/Office';
 import CreatePost from "./container/CreatePost";
+import Scholarship from './container/Scholarship';
+
 import ImageUpload from './components/ImageUpload';
 import Post from './container/Post';
 
@@ -25,10 +27,11 @@ function App() {
         <Route path="/post/create" exact component={CreatePost} />
         <Route path="/image/upload" exact component={ImageUpload} />
         <Route path='/' exact component={Home} />
-        <Route path='/intro' exact component={IntroScreen} />
+        <Route path='/intro' exact component={Intro} />
         <Route path='/board' exact component={Board} />
         <Route path="/board/:id" exact component={Post} />
         <Route path="/office" exact component={Office} />
+        <Route path="/scholarship" exact component={Scholarship} />
         {/* <Route path="/map" component={MapScreen} />
         <Route path="/business" component={BusinessScreen} />
         <Route path="/group" component={GroupScreen} />

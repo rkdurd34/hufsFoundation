@@ -60,6 +60,7 @@ function Summernote({ props }) {
     formData.append('status', "published");
     formData.append('author_id', 1);
     formData.append('content', content);
+    console.log(formData);
     docs.forEach(file => { formData.append('docs', file); });
     const result = await axios.post(URL + '/board/upload', formData);
   };

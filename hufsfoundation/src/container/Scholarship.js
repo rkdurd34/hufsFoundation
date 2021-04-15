@@ -11,7 +11,6 @@ position:relative;
 `;
 const Board = styled.div`
 width:100%;
-
 background-color:#F5F5F5;
 
 
@@ -34,15 +33,15 @@ div{
   font-weight: bold;
 } 
 `;
-export default function IntroScreen() {
+export default function scholarship() {
   return (
     <Container>
       <Title banner={Banner} />
       <BoardTitle>
-        <div>장학회소개</div>
+        <div>장학금지급</div>
       </BoardTitle>
       <Board>
-
+        
       </Board>
     </Container>
   );

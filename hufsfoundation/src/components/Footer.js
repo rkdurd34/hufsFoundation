@@ -10,6 +10,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 border-top: 0.5px solid #DCDCDC;
+z-index: 999;
 div{
   width:50%;
   display:flex;
@@ -25,7 +26,7 @@ img{
   width:35%;
   margin-left: 10vw;
   }
-z-index: 999;
+
 
 `;
 
