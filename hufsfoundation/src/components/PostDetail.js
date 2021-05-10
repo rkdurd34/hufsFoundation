@@ -58,6 +58,7 @@ export default function PostDetail({ params }) {
     const fetchData = async () => {
       // 현재 게시물의 데이터만 가져오기
       const { data } = await axios.get(base + `?post_no=${postId}`);
+      console.log(base);
       setPost(data);
     };
     fetchData();
@@ -93,7 +94,7 @@ export default function PostDetail({ params }) {
 
   const createDownload = async (no, originalName) => {
     await axios({
-      url: `board/post/file/download?post_no=${no}`,
+      url: `http://3.36.240.145:5000/board/post/file/download?post_no=${no}`,
       method: "GET",
       responseType: "blob",
     }).then(res => {
