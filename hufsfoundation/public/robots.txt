@@ -1,0 +1,3 @@
+# http://www.hufsalumnischolarship.or.kr/robotstxt.html
+User-agent: *
+Allow: /

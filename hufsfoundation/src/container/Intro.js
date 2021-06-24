@@ -79,7 +79,8 @@ display:flex;
 align-items:center;
 align-content:center;
 div{
-  width:11vw;
+  width:11.5vw;
+  text-align: center;
   border-bottom:2px solid #CBCBCB;
   padding-bottom:0.5vw;
   font-size: 2.5vw;
