@@ -79,13 +79,17 @@ display:flex;
 align-items:center;
 align-content:center;
 div{
-  width:11.5vw;
-  text-align: center;
+  width:100%;
+  
+  span{
+    text-align: center;
   border-bottom:2px solid #CBCBCB;
   padding-bottom:0.5vw;
   font-size: 2.5vw;
   color: #106E79;
   font-weight: bold;
+
+  }
 } 
 `;
 export default function IntroScreen() {
@@ -93,7 +97,11 @@ export default function IntroScreen() {
     <Container>
       <Title banner={Banner} />
       <BoardTitle>
-        <div>장학회소개</div>
+        <div>
+          <span>
+            장학회소개
+          </span>
+        </div>
       </BoardTitle>
       <Board>
 
@@ -118,7 +126,7 @@ export default function IntroScreen() {
                 <td>김기병</td><td>롯데관광(주)회장</td><td>영어58</td><td></td>
               </tr>
               <tr>
-                <td>조규태</td><td>(주)김엔씨 대표이사</td><td>베트남68</td><td></td>
+                <td>조규태</td><td>(주)캄앤씨 대표이사</td><td>포어72</td><td></td>
               </tr>
               <tr>
                 <td>김형진</td><td>세종텔레콤 (주)회장</td><td>AMP1기</td><td></td>
@@ -127,13 +135,13 @@ export default function IntroScreen() {
                 <td>민경중</td><td>방송통신심의위원회 사무총장</td><td>법학72</td><td></td>
               </tr>
               <tr>
-                <td>홍영표</td><td>(주)키티스 산학면정보 대표이사</td><td>아랍81</td><td></td>
+                <td>홍영표</td><td>KITIS 산학연정보(주) 대표이사</td><td>아랍어81</td><td></td>
               </tr>
               <tr>
-                <td rowSpan="2" align="center">감사</td><td>최영호</td><td>학교 육영재단 이사</td><td>노어69</td><td></td>
+                <td rowSpan="2" align="center">감사</td><td>최맹호</td><td>학교 육영재단 이사</td><td>노어69</td><td></td>
               </tr>
               <tr>
-                <td>유용관</td><td>비즈세무법인 대표세무사</td><td>국제통상86</td><td></td>
+                <td>유용관</td><td>비즈세무법인 대표</td><td>국제통상86</td><td></td>
               </tr>
             </tbody>
           </table>

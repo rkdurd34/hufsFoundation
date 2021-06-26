@@ -63,14 +63,17 @@ display:flex;
 align-items:center;
 align-content:center;
 div{
-  width:11.5vw;
-  text-align: center;
-  border-bottom:2px solid #CBCBCB;
+  width:100%;
   
-  padding-bottom:0.5vw;
-  font-size: 2.5vw;
-  color: #106E79;
-  font-weight: bold;
+  
+  span{
+    border-bottom:2px solid #CBCBCB;
+    padding-bottom:0.5vw;
+    font-size: 2.5vw;
+    color: #106E79;
+    font-weight: bold;
+
+  }
 } 
 `;
 export default function scholarship() {
@@ -78,7 +81,7 @@ export default function scholarship() {
     <Container>
       <Title banner={Banner} />
       <BoardTitle>
-        <div>장학금지급</div>
+        <div><span>장학금지급</span></div>
       </BoardTitle>
       <Board>
         <div className="up">
@@ -103,9 +106,9 @@ export default function scholarship() {
             <ul>
               <li>가. 연 2회 : 한 학기 8명씩, 150만원/명 수여 </li>
               <li>나. 모집공고 : 5월/11월 (2주간)</li>
-              <li>다. 제출서류:&nbsp;&nbsp;&nbsp; 전 학년 성적 증명서(1)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주민등록 등본(1, 주민번호 포함)  <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이력서 및 자기소개서(1)
+              <li>다. 제출서류:&nbsp;&nbsp;&nbsp; 전 학년 성적 증명서 1부<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주민등록 등본 1부(주민등록번호 뒷자리 노출 필수)  <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이력서 및 자기소개서 1부
               </li>
               <li>라.   지급시기 : 6월, 12월 중 </li>
             </ul>

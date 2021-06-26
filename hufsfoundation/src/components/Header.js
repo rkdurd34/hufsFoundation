@@ -10,14 +10,15 @@ width: 100%;
 height:8vw;
 background-color:white;
 display:flex;
+justify-content: space-between;
 
 .first{
-  width:50%;
+  width:30%;
   height:100%;
   display:flex;
   align-items:center;
   img{
-    width:40%;
+    width:60%;
     margin-left:10%;
   }
 
@@ -30,9 +31,10 @@ display:flex;
   justify-content:center;
   align-items:center;
   align-content:center;
+  margin-right: 5vw;
   ul{
     display:flex;
-    align-items:center;
+    justify-content: space-around;
     margin-left:4vw;
     width: 100%;
     margin-bottom:0px;
@@ -42,7 +44,6 @@ display:flex;
     font-weight:bold;
     font-size:1.3vw;
     letter-spacing:0.05vw;
-    padding:0 3% 0 3%;
     list-style:none
   }
   ul li a:hover{

@@ -22,13 +22,15 @@ display:flex;
 align-items:center;
 align-content:center;
 div{
-  width:8.7vw;
-  border-bottom:2px solid #CBCBCB;
-  
-  padding-bottom:0.5vw;
-  font-size: 2.5vw;
+  width:100%;
+  span{
+    border-bottom:2px solid #CBCBCB;
+    padding-bottom:0.5vw;
+    font-size: 2.5vw;
   color: #106E79;
   font-weight: bold;
+
+  }
   
 }
 `;
@@ -38,7 +40,11 @@ export default function Board() {
       <Title banner={Banner} />
       <Section>
         <BoardTitle>
-          <div>정보공개</div>
+          <div>
+            <span>
+              정보공개
+            </span>
+          </div>
         </BoardTitle>
         <Forum />
       </Section>

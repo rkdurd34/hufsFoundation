@@ -73,13 +73,16 @@ display:flex;
 align-items:center;
 align-content:center;
 div{
-  width:8.7vw;
-  border-bottom:2px solid #CBCBCB;
+  width:100%;
+  
+  span{
+    border-bottom:2px solid #CBCBCB;
   
   padding-bottom:0.5vw;
   font-size: 2.5vw;
   color: #106E79;
   font-weight: bold;
+  }
   
 }
 
@@ -92,7 +95,11 @@ export default function Office() {
       <Title banner={Banner} />
       <Section>
         <BoardTitle>
-          <div>감독기관</div>
+          <div>
+            <span>
+              감독기관
+            </span>
+          </div>
         </BoardTitle>
         <ButtonSection>
           <a href="https://www.nts.go.kr"><button>국세청</button></a>
