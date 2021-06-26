@@ -25,14 +25,14 @@ button{
   position:relative;
   width:25vw;
   height:6vw;
-  font-size:1.6em;
+  /* font-size:1.6em; */
   padding:0 2em;
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
   letter-spacing:0.1vw;
   /* border-radius:100px; */
-  font-size: 2.5vw;
+  font-size: 2vw;
 }
 button:hover{
   background:#fff;

@@ -16,12 +16,14 @@ import Scholarship from './container/Scholarship';
 
 import ImageUpload from './components/ImageUpload';
 import Post from './container/Post';
+import "antd/dist/antd.css";
 
 function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      <Route path="/" component={Header} />
+      {/* <Header props={(props) => props} /> */}
 
       <main>
         <Route path="/post/create" exact component={CreatePost} />

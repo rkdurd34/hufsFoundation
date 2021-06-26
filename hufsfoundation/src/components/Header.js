@@ -7,27 +7,29 @@ import logo1 from '../images/logo2.jpg';
 
 const Container = styled.div`
 width: 100%;
-height:8vw;
+height:10vw;
 background-color:white;
 display:flex;
-justify-content: space-between;
+justify-content: ${props => { return props.headerValid === false ? "center" : "space-between"; }} ;
 
-.first{
-  width:30%;
+`;
+const First = styled.div`
+  width:25%;
   height:100%;
   display:flex;
   align-items:center;
   img{
-    width:60%;
-    margin-left:10%;
+    width:100%;
+    margin-left:${props => { return props.headerValid === false ? 0 : "10%"; }} ;
   }
+`;
+const Second = styled.div`
+  display: ${props => (props.headerValid === false) ? "none" : "flex"};
 
-}
-.second{
   width:50%;
   height:100%;
   font-size: 1vw;
-  display:flex;
+  /* display:flex; */
   justify-content:center;
   align-items:center;
   align-content:center;
@@ -42,33 +44,32 @@ justify-content: space-between;
   }
   ul li{
     font-weight:bold;
-    font-size:1.3vw;
+    font-size:1.5vw;
     letter-spacing:0.05vw;
     list-style:none
   }
   ul li a:hover{
     color:#549daa;
   }
-}
+
 `;
 
-const Header = () => {
+const Header = ({ match, location }) => {
+
   return (
     <React.Fragment>
-      <Container>
-        <div className="first">
-
+      <Container headerValid={(location.pathname === "/") ? false : true}>
+        <First headerValid={(location.pathname === "/") ? false : true} >
           <Link to="/"><img src={logo1} alt="logo" /></Link>
-
-        </div>
-        <div className="second">
+        </First>
+        <Second headerValid={(location.pathname === "/") ? false : true}>
           <ul>
             <li><Link to="/intro">장학회소개</Link></li>
             <li><Link to="/scholarship">장학금지급</Link></li>
             <li><Link to="/board">정보공개</Link></li>
             <li><Link to="/office">감독기관</Link></li>
           </ul>
-        </div>
+        </Second>
       </Container>
       {/* <div className="header">
         <Link to="/" className="logo"><img src={'a'} alt="logo" width='30%'></img></Link>

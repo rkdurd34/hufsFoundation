@@ -4,23 +4,25 @@ import { Link } from 'react-router-dom';
 import Title from '../components/Title';
 
 import Banner from '../images/library1.gif';
-
+import {
+  InfoCircleOutlined,
+  DatabaseOutlined,
+  CopyOutlined, BankOutlined
+} from '@ant-design/icons';
 const Container = styled.div`
 width:100%;
-height:50vw;
+min-height:25vw;
 position:relative;
+background-color:#F1F1F1;
 
 `;
 const Section = styled.div`
 width:50vw;
-height:24vw;
-position:absolute;
-left:40%;
-top:35%;
-
-background-color:#F5F5F5;
+height:20vw;
+background-color:#F1F1F1;
+width: 100%;
 z-index: 100;
-box-shadow: 0px 0px 37px 4px rgba(38,38,38,0.72);
+/* box-shadow: 0px 0px 37px 4px rgba(38,38,38,0.72); */
 pointer-events: auto;
 
 display:flex;
@@ -29,7 +31,11 @@ justify-content:center;
 align-items:center;
 align-content:center;
 a{
-  width:40%;
+  svg{
+    font-size: 2vw;
+    margin-right: 1vw;
+  }
+  width:20%;
   height:30%;
   margin:0.5vw;
 }
@@ -48,9 +54,9 @@ a{
 	cursor:pointer;
 	color:#666666;
 	font-family:Arial;
-	font-size:20px;
+	font-size:2vw;
 	font-weight:bold;
-	padding:22px 46px;
+	/* padding:22px 46px; */
 	text-decoration:none;
 	
   display:flex;
@@ -76,10 +82,18 @@ export default function Home() {
     <Container>
       <Title banner={Banner} />
       <Section>
-        <Link to={'/intro'}><div className="myButton">장학회소개</div></Link>
-        <Link to={'/intro'}><div className="myButton">장학금지급</div></Link>
-        <Link to={'/board'}><div className="myButton">정보공개</div></Link>
-        <Link to={'/office'}><div className="myButton">감독기관</div></Link>
+        <Link to={'/intro'}><div className="myButton"><InfoCircleOutlined />장학회소개</div></Link>
+        <Link to={'/scholarship'}><div className="myButton"><CopyOutlined />장학금지급</div></Link>
+        <Link to={'/board'}>
+          <div className="myButton">
+            <DatabaseOutlined />
+            정보공개
+          </div>
+        </Link>
+        <Link to={'/office'}><div className="myButton">
+          <BankOutlined />
+          감독기관
+        </div></Link>
       </Section>
     </Container>
   );

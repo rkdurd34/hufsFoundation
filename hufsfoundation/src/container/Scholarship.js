@@ -5,7 +5,7 @@ import Banner from '../images/library2.gif';
 
 const Container = styled.div`
 width:100%;
-height:75vw;
+height:max-content;
 position:relative;
 
 `;
