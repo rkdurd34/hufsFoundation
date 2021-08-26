@@ -93,61 +93,64 @@ div{
 } 
 `;
 export default function IntroScreen() {
-  return (
-    <Container>
-      <Title banner={Banner} />
-      <BoardTitle>
-        <div>
-          <span>
-            장학회소개
-          </span>
-        </div>
-      </BoardTitle>
-      <Board>
+    return (
+        <Container>
+            <Title banner={Banner} />
+            <BoardTitle>
+                <div>
+                    <span>
+                        장학회소개
+                    </span>
+                </div>
+            </BoardTitle>
+            <Board>
 
-        <div className="up">1989년 11월 29일 설립된 (재)한국외대동문장학회는 <br />한국외국어대학교 재학생 및 동문을 위한 장학금 지급을 목적으로 설립된 공익법인입니다.</div>
+                <div className="up">1989년 11월 29일 설립된 (재)한국외대동문장학회는 <br />한국외국어대학교 재학생 및 동문을 위한 장학금 지급을 목적으로 설립된 공익법인입니다.</div>
 
-        <div className="down">
-          <div className="down_intro">5월/11월 장학재단 이사회를 개최하여 장학급 수혜대상 선정 및 예/결산안을 심의 및 의결합니다. </div>
-          <table>
-            <thead>
-              <tr>
-                <th></th><th>성명</th><th>직책</th><th>학과,입학년도</th><th style={{ width: "5vw" }}></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td align="center">이사장</td><td>민동석</td><td>총동문회 회장</td><td>노어73</td><td></td>
-              </tr>
-              <tr>
-                <td rowSpan="6" align="center">이사</td><td>윤윤수</td><td>휠라코리아(주)회장</td><td>정외66</td><td></td>
-              </tr>
-              <tr>
-                <td>김기병</td><td>롯데관광(주)회장</td><td>영어58</td><td></td>
-              </tr>
-              <tr>
-                <td>조규태</td><td>(주)캄앤씨 대표이사</td><td>포어72</td><td></td>
-              </tr>
-              <tr>
-                <td>김형진</td><td>세종텔레콤 (주)회장</td><td>AMP1기</td><td></td>
-              </tr>
-              <tr>
-                <td>민경중</td><td>방송통신심의위원회 사무총장</td><td>법학72</td><td></td>
-              </tr>
-              <tr>
-                <td>홍영표</td><td>KITIS 산학연정보(주) 대표이사</td><td>아랍어81</td><td></td>
-              </tr>
-              <tr>
-                <td rowSpan="2" align="center">감사</td><td>최맹호</td><td>학교 육영재단 이사</td><td>노어69</td><td></td>
-              </tr>
-              <tr>
-                <td>유용관</td><td>비즈세무법인 대표</td><td>국제통상86</td><td></td>
-              </tr>
-            </tbody>
-          </table>
+                <div className="down">
+                    <div className="down_intro">매년 11월 재단이사회를 개최하여 예/결산안을 심의 , 의결합니다. <br />
+                        *지정기부금 단체로써 기탁하신 기부금에대한 영수증 발급이 가능합니다.
 
-        </div>
-      </Board>
-    </Container >
-  );
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th><th>성명</th><th>직책</th><th>학과,입학년도</th><th style={{ width: "5vw" }}></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center">이사장</td><td>민동석</td><td>총동문회 회장</td><td>노어73</td><td></td>
+                            </tr>
+                            <tr>
+                                <td rowSpan="6" align="center">이사</td><td>윤윤수</td><td>휠라코리아(주)회장</td><td>정외66</td><td></td>
+                            </tr>
+                            <tr>
+                                <td>김기병</td><td>롯데관광(주)회장</td><td>영어58</td><td></td>
+                            </tr>
+                            <tr>
+                                <td>조규태</td><td>(주)캄앤씨 대표이사</td><td>포어72</td><td></td>
+                            </tr>
+                            <tr>
+                                <td>김형진</td><td>세종텔레콤 (주)회장</td><td>AMP1기</td><td></td>
+                            </tr>
+                            <tr>
+                                <td>민경중</td><td>방송통신심의위원회 사무총장</td><td>법학72</td><td></td>
+                            </tr>
+                            <tr>
+                                <td>홍영표</td><td>KITIS 산학연정보(주) 대표이사</td><td>아랍어81</td><td></td>
+                            </tr>
+                            <tr>
+                                <td rowSpan="2" align="center">감사</td><td>최맹호</td><td>학교 육영재단 이사</td><td>노어69</td><td></td>
+                            </tr>
+                            <tr>
+                                <td>유용관</td><td>비즈세무법인 대표</td><td>국제통상86</td><td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </Board>
+        </Container >
+    );
 };;;
