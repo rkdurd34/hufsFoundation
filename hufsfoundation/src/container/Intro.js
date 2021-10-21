@@ -11,7 +11,7 @@ position:relative;
 `;
 const Board = styled.div`
 width:100%;
-height:80vw;
+height:90vw;
 background-color:#F5F5F5;
 display:flex;
 flex-direction:column;
@@ -31,7 +31,12 @@ flex-direction:column;
 
 }
 .down{
-  margin:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin:0 auto;  
+
   margin-top:0;
   table{
     width:70vw;
@@ -93,61 +98,75 @@ div{
 } 
 `;
 export default function IntroScreen() {
-    return (
-        <Container>
-            <Title banner={Banner} />
-            <BoardTitle>
-                <div>
-                    <span>
-                        장학회 소개
-                    </span>
-                </div>
-            </BoardTitle>
-            <Board>
+  return (
+    <Container>
+      <Title banner={Banner} />
+      <BoardTitle>
+        <div>
+          <span>
+            장학회 소개
+          </span>
+        </div>
+      </BoardTitle>
+      <Board>
 
-                <div className="up">1989년 11월 29일 설립된 (재)한국외대동문장학회는 <br />한국외국어대학교 재학생 및 동문을 위한 장학금 지급을 목적으로 설립된 공익법인입니다.</div>
+        <div className="up">
+          1989년 11월 29일 설립된 (재)한국외대동문장학회는
+          한국외국어대학교 재학생 및 동문을 위한 장학금 지급을 목적으로 설립된 공익법인입니다.
 
-                <div className="down">
-                    <div className="down_intro">매년 2월과 8월에 재단이사회를 개최하여 장학생 선발, 예산, 결산, 자산 관리, 정관 개정, 임원의 임명에 관한 사항을 심의하여 결정합니다. <br />
-                        *지정기부금 단체로써 기탁하신 기부금에대한 영수증 발급이 가능합니다.<br />
-                        *기부를 원하시는 분(동문 단체)는 사무국으로 연락 주시기 바랍니다. 기부하시는 분의 요청에 맞추어 장학금을 지급할 수 있습니다.(02-577-1954)
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th></th><th>성명</th><th>직책</th><th>학과,입학년도</th><th style={{ width: "5vw" }}></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td align="center">이사장</td><td>양인집</td><td>총동문회 회장</td><td>일본어76</td><td></td>
-                            </tr>
-                            <tr>
-                                <td rowSpan="6" align="center">이사</td><td>김석필</td><td>(주)비바체 대표이사</td><td>불어80</td><td></td>
-                            </tr>
-                            <tr>
-                                <td>김형진</td><td>(주)세종텔레콤 회장</td><td>경영대학원97</td><td></td>
-                            </tr>
-                            <tr>
-                                <td>이호성</td><td>SM Golf ENC 대표</td><td>일본어76</td><td></td>
-                            </tr>
-                            <tr>
-                                <td>홍영표</td><td>(주)KITIS산학연정보 대표이사</td><td>아랍어81</td><td></td>
-                            </tr>
-                            <tr>
-                                <td> </td><td> </td><td> </td><td></td>
-                            </tr>
-                            <tr>
-                                <td rowSpan="2" align="center">감사</td><td>최맹호</td><td>동원육영재단 이사</td><td>노어69</td><td></td>
-                            </tr>
-                            <tr>
-                                <td>유용관</td><td>비즈세무법인 대표</td><td>국제통상86</td><td></td>
-                            </tr>
-                        </tbody>
-                    </table>
+          매년 2월과 8월에 재단이사회를 개최하여 장학생 선발, 예산, 결산, 자산 관리, 정관 개정, 임원의 임명에 관한 사항을 심의하여 결정합니다.
+          <br />
+          <br />
+          *지정기부금 단체로써 기탁하신 기부금에대한 영수증 발급이 가능합니다.<br />
+          *기부를 원하시는 분(동문 단체)는 사무국으로 연락 주시기 바랍니다. 기부하시는 분의 요청에 맞추어 장학금을 지급할 수 있습니다.(02-577-1954)
+        </div>
 
-                </div>
-            </Board>
-        </Container >
-    );
+        <div className="down">
+          <div className="down_intro">
+
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th></th><th>성명</th><th>직책</th><th>학과,입학년도</th><th style={{ width: "5vw" }}></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center">이사장</td><td>양인집</td><td>총동문회 회장</td><td>일본어76</td><td></td>
+              </tr>
+              <tr>
+                <td rowSpan="6" align="center">이사</td><td>김석필</td><td>(주)비바체 대표이사</td><td>불어80</td><td></td>
+              </tr>
+              <tr>
+                <td>김형진</td><td>(주)세종텔레콤 회장</td><td>경영대학원97</td><td></td>
+              </tr>
+              <tr>
+                <td>이호성</td><td>SM Golf ENC 대표</td><td>일본어76</td><td></td>
+              </tr>
+              <tr>
+                <td>홍영표</td><td>(주)KITIS산학연정보 대표이사</td><td>아랍어81</td><td></td>
+              </tr>
+              <tr>
+                <td style={{
+                  height: "5vw",
+
+                }}> </td><td> </td><td> </td><td></td>
+              </tr>
+              <tr>
+                <td>조규태</td><td>(주)캄앤씨 대표이사</td><td>포어72</td><td></td>
+              </tr>
+              <tr>
+                <td rowSpan="2" align="center">감사</td><td>최맹호</td><td>동원육영재단 이사</td><td>노어69</td><td></td>
+              </tr>
+              <tr>
+                <td>유용관</td><td>비즈세무법인 대표</td><td>국제통상86</td><td></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </Board>
+    </Container >
+  );
 };;;
