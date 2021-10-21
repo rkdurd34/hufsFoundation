@@ -5,9 +5,9 @@ import Title from '../components/Title';
 
 import Banner from '../images/library1.gif';
 import {
-  InfoCircleOutlined,
-  DatabaseOutlined,
-  CopyOutlined, BankOutlined
+    InfoCircleOutlined,
+    DatabaseOutlined,
+    CopyOutlined, BankOutlined
 } from '@ant-design/icons';
 const Container = styled.div`
 width:100%;
@@ -78,23 +78,23 @@ a{
 
 `;
 export default function Home() {
-  return (
-    <Container>
-      <Title banner={Banner} />
-      <Section>
-        <Link to={'/intro'}><div className="myButton"><InfoCircleOutlined />장학회소개</div></Link>
-        <Link to={'/scholarship'}><div className="myButton"><CopyOutlined />장학금지급</div></Link>
-        <Link to={'/board'}>
-          <div className="myButton">
-            <DatabaseOutlined />
-            정보공개
-          </div>
-        </Link>
-        <Link to={'/office'}><div className="myButton">
-          <BankOutlined />
-          감독기관
-        </div></Link>
-      </Section>
-    </Container>
-  );
+    return (
+        <Container>
+            <Title banner={Banner} />
+            <Section>
+                <Link to={'/intro'}><div className="myButton"><InfoCircleOutlined />장학회 소개</div></Link>
+                <Link to={'/scholarship'}><div className="myButton"><CopyOutlined />장학금 지급</div></Link>
+                <Link to={'/board'}>
+                    <div className="myButton">
+                        <DatabaseOutlined />
+                        정보공개
+                    </div>
+                </Link>
+                <Link to={'/office'}><div className="myButton">
+                    <BankOutlined />
+                    감독기관
+                </div></Link>
+            </Section>
+        </Container>
+    );
 }

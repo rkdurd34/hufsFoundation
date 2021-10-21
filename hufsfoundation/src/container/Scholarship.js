@@ -81,7 +81,7 @@ export default function scholarship() {
         <Container>
             <Title banner={Banner} />
             <BoardTitle>
-                <div><span>장학금지급</span></div>
+                <div><span>장학금 지급</span></div>
             </BoardTitle>
             <Board>
                 <div className="up">
@@ -104,13 +104,13 @@ export default function scholarship() {
                     <div className="title">지급기준</div>
                     <div className="content">
                         <ul>
-                            <li>가. 연 2회 : 한 학기 8명씩, 150만원/명 지급 </li>
-                            <li>나. 모집공고 : 4월/10월</li>
+                            <li>가. 연 2회 150만원/명 지급 </li>
+                            <li>나. 모집공고 : 1월, 7월초</li>
                             <li>다. 제출서류:&nbsp;&nbsp;&nbsp;전 학년 성적 증명서 1부<br />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;주민등록 등본 1부(주민등록번호 전부 공개)  <br />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자기소개서 1부
                             </li>
-                            <li>라.   지급시기 : 5월, 11월 중 </li>
+                            <li>라.   지급시기 : 3월, 9월 초 </li>
                         </ul>
                     </div>
                 </div>
