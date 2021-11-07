@@ -133,7 +133,7 @@ export default function IntroScreen() {
             </thead>
             <tbody>
               <tr>
-                <td align="center">이사장</td><td>양인집</td><td>총동문회 회장</td><td>일본어76</td><td></td>
+                <td align="center" style={{ height: '6vw' }}>이사장</td><td>양인집</td><td>총동문회 회장<br />㈜어니컴 회장</td><td>일본어76</td><td></td>
               </tr>
               <tr>
                 <td rowSpan="6" align="center">이사</td><td>김석필</td><td>(주)비바체 대표이사</td><td>불어80</td><td></td>
@@ -149,9 +149,9 @@ export default function IntroScreen() {
               </tr>
               <tr>
                 <td style={{
-                  height: "5vw",
 
-                }}> </td><td> </td><td> </td><td></td>
+
+                }}>서경교</td><td>한국외대 정치외교학과 교수</td><td>정외78</td><td></td>
               </tr>
               <tr>
                 <td>조규태</td><td>(주)캄앤씨 대표이사</td><td>포어72</td><td></td>
